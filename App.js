@@ -1,20 +1,58 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {TextInput, Image, StyleSheet, Text, View } from 'react-native';
+import {Image, StyleSheet, Text, View, Button } from 'react-native';
 import logo from './assets/logo2.png';
+import t from 'tcomb-form-native';
+
+const Form = t.form.Form
+var refNum = t.refinement(t.Number, function (n) { return n > 9999; })
+
+refNum.getValidationErrorMessage = function (value, path, context) {
+  if(value == null){
+    return "Empty"
+  }
+  else if(value < 9999){
+    return "Must be at least 5 long";
+  }
+};
+
+const User = t.struct({
+  refNum: refNum,
+})
+
+const options = {
+
+  fields: {
+    refNum: {
+      hasError: false,
+      label: "Enter your Reference Number",
+      placeholder: 'Customer Reference Number',
+  },
+  stylesheet: formStyles,
+}
+};
 
 export default function App() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+  handleSubmit = () => {
+    const value = this._form.getValue();
+    if(value)
+    console.log('value: ', value);
+    else
+    console.log('Error');
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
-      <Text style={styles.body}>Please enter customer reference number</Text>
-      <TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
+      <Form 
+          ref={c => this._form = c}
+          type={User} 
+          options={options}
+        />
+        <Button
+          title="Log in"
+          onPress={this.handleSubmit}
+        />
       <StatusBar style="auto" />
     </View>
   );
@@ -45,3 +83,27 @@ const styles = StyleSheet.create({
     top: 100
   }
 });
+
+const formStyles = {
+  ...Form.stylesheet,
+  formGroup: {
+    normal: {
+      marginBottom: 10
+    },
+  },
+  controlLabel: {
+    normal: {
+      color: 'blue',
+      fontSize: 18,
+      marginBottom: 7,
+      fontWeight: '600'
+    },
+    // the style applied when a validation error occours
+    error: {
+      color: 'red',
+      fontSize: 18,
+      marginBottom: 7,
+      fontWeight: '600'
+    }
+  }
+}
