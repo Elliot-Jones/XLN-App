@@ -8,6 +8,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
+      <Text style={styles.body}>Please enter customer reference number</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -27,6 +28,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     position: 'absolute',
     top: 50,
+  },
+  body: {
+    textAlign: "center",
+    fontSize: 20,
+    color: "#3e3d40"
   },
   logo: {
     position: 'absolute',
