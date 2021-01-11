@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, StyleSheet, Text, View } from 'react-native';
+import {TextInput, Image, StyleSheet, Text, View } from 'react-native';
 import logo from './assets/logo2.png';
 
 export default function App() {
+  const [value, onChangeText] = React.useState('Useless Placeholder');
   return (
     <View style={styles.container}>
       <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
       <Text style={styles.body}>Please enter customer reference number</Text>
+      <TextInput
+      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      onChangeText={text => onChangeText(text)}
+      value={value}
+    />
       <StatusBar style="auto" />
     </View>
   );
