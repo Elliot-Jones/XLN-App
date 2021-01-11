@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {TextInput, Image, StyleSheet, Text, View } from 'react-native';
+import {TouchableOpacity, TextInput, Image, StyleSheet, Text, View } from 'react-native';
 import logo from './assets/logo2.png';
 
 export default function App() {
@@ -14,7 +14,10 @@ export default function App() {
       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
       onChangeText={text => onChangeText(text)}
       value={value}
-    />
+      />
+      <TouchableOpacity onPress={alert("Click")} style={styles.button}>
+      <Text style={styles.buttonText}>Click me</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -43,5 +46,13 @@ const styles = StyleSheet.create({
   logo: {
     position: 'absolute',
     top: 100
+  },
+  button: {
+    backgroundColor: "#00a3c4",
+    padding: 20,
+    borderRadius: 5,
+  },
+  buttonText: {
+
   }
 });
