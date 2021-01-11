@@ -15,8 +15,10 @@ export default function App() {
       onChangeText={text => onChangeText(text)}
       value={value}
       />
-      <TouchableOpacity onPress={alert("Click")} style={styles.button}>
-      <Text style={styles.buttonText}>Click me</Text>
+      <TouchableOpacity onPress={alert("Click")}>
+      <View style={styles.button}>
+      <Text style={styles.buttonText}>Click Me</Text>
+      </View>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
