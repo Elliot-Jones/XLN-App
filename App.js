@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, StyleSheet, Text, View, Button } from 'react-native';
+import {Image, StyleSheet, Text, View, Button, Alert } from 'react-native';
 import logo from './assets/logo2.png';
 import t from 'tcomb-form-native';
 
@@ -11,7 +11,7 @@ refNum.getValidationErrorMessage = function (value, path, context) {
   if(value == null){
     return "Empty"
   }
-  else if(value.toString().length != 6 || value.toString().length != 11){
+  else if(validation(value)){
     return "Please enter a 6 digit ID number or a landline number";
   }
 };
@@ -32,14 +32,38 @@ const options = {
 }
 };
 
+function validation (value){
+  if(value.toString().length != 6 || value.toString().length != 11){
+    return true;
+  }
+}
+
 export default function App() {
   handleSubmit = () => {
     const value = this._form.getValue();
+    console.log(value);
     if(value)
-    console.log('value: ', value);
+      if(value.refNum.toString().length == 11)
+        ServiceSelector();
+      else
+        console.log("Broadband Pressed");
     else
     console.log('Error');
   }
+
+  const ServiceSelector = () =>
+    Alert.alert(
+      "Select Service",
+      "My Alert Msg",
+      [
+        {
+          text: "Landline",
+          onPress: () => console.log("Landline Pressed"),
+        },
+        { text: "Broadband", onPress: () => console.log("Broadband Pressed") }
+      ]
+    );
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>XLN App</Text>
