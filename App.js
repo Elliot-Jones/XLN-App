@@ -5,14 +5,14 @@ import logo from './assets/logo2.png';
 import t from 'tcomb-form-native';
 
 const Form = t.form.Form
-var refNum = t.refinement(t.Number, function (n) { return n > 9999; })
+var refNum = t.refinement(t.Number, function (n) { return (n.toString().length == 6 || n.toString().length == 11 ); })
 
 refNum.getValidationErrorMessage = function (value, path, context) {
   if(value == null){
     return "Empty"
   }
-  else if(value < 9999){
-    return "Must be at least 5 long";
+  else if(value.toString().length != 6 || value.toString().length != 11){
+    return "Please enter a 6 digit ID number or a landline number";
   }
 };
 
