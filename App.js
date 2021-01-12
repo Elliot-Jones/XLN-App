@@ -7,7 +7,6 @@ export default function App() {
   const [value, onChangeText] = React.useState('Useless Placeholder');
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
       <Text style={styles.body}>Please enter customer reference number</Text>
       <TextInput
