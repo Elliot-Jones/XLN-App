@@ -3,6 +3,8 @@ import React from 'react';
 import {Image, StyleSheet, Text, View, Button, Alert } from 'react-native';
 import logo from './assets/logo2.png';
 import t from 'tcomb-form-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Form = t.form.Form
 var refNum = t.refinement(t.Number, function (n) { return (n.toString().length == 6 || ("0" + n.toString()).length == 11 ); })
@@ -51,7 +53,25 @@ function compareData(array,key){
   return null;
 }
 
-export default function App() {
+
+function Broadband ({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen1</Text>
+    </View>
+  );
+}
+
+function Landline ({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen2</Text>
+    </View>
+  );
+}
+
+
+function HomeScreen({navigation}){
   handleSubmit = () => {
     const value = this._form.getValue();
     customData = require('./cus_data.json');
@@ -61,7 +81,7 @@ export default function App() {
       else if (compareData(customData, value.refNum))
         ServiceSelector();
       else
-        console.log("Broadband Pressed");
+        navigation.navigate('Broadband');
     else
     console.log('Error');
   }
@@ -73,9 +93,9 @@ export default function App() {
       [
         {
           text: "Landline",
-          onPress: () => console.log("Landline Pressed"),
+          onPress: () => navigation.navigate('Landline'),
         },
-        { text: "Broadband", onPress: () => console.log("Broadband Pressed") }
+        { text: "Broadband", onPress: () => navigation.navigate('Broadband')}
       ]
     );
 
@@ -95,6 +115,26 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   );
+}
+
+
+
+
+
+
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Broadband" component={Broadband} />
+          <Stack.Screen name="Landline" component={Landline} />
+        </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
