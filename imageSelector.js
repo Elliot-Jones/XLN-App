@@ -71,3 +71,26 @@ export default class imageSelection extends React.Component {
       };
   }
   
+/* Some code that shows how this can be implemented in our app usig the funcs
+export default class App extends React.Component {
+  ...
+
+  render() {
+    const { photo } = this.state
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        {photo && (
+          <React.Fragment>
+            <Image
+              source={{ uri: photo.uri }}
+              style={{ width: 300, height: 300 }}
+            />
+            <Button title="Upload" onPress={this.handleUpload} />
+          </React.Fragment>
+        )}
+        <Button title="Choose Photo" onPress={this.handleChoosePhoto} />
+      </View>
+    )
+  }
+}
+*/
