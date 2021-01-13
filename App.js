@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
 });
 
 // Choose an image
-export default class App extends React.Component {
+export default class Camera extends React.Component {
   state = {
     photo: null,
   }
-
+// Choose the Image
   handleChoosePhoto = () => {
     const options = {
       noData: true,
@@ -75,7 +75,7 @@ export default class App extends React.Component {
       }
     })
   }
-
+// Show selected photo
   render() {
     const { photo } = this.state
     return (
