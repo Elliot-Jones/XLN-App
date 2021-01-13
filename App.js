@@ -5,7 +5,7 @@ import logo from './assets/logo2.png';
 import t from 'tcomb-form-native';
 
 const Form = t.form.Form
-var refNum = t.refinement(t.Number, function (n) { return (n.toString().length == 6 || n.toString().length == 11 ); })
+var refNum = t.refinement(t.Number, function (n) { return (n.toString().length == 6 || ("0" + n.toString()).length == 11 ); })
 
 refNum.getValidationErrorMessage = function (value, path, context) {
   if(value == null){
@@ -33,17 +33,32 @@ const options = {
 };
 
 function validation (value){
-  if(value.toString().length != 6 || value.toString().length != 11){
+  console.log();
+  if(value.toString().length != 4 || (value.toString()).length != 0){
     return true;
   }
+}
+
+function compareData(array,key){
+  var i;
+  for(i = 0; i < array.length; i++){
+    if(array[i].cli_cus_key == key || array[i].cli_line_number == key)
+      if(array[i].dsl_active)
+        return true
+      else
+        return false
+  }
+  return null;
 }
 
 export default function App() {
   handleSubmit = () => {
     const value = this._form.getValue();
-    console.log(value);
+    customData = require('./cus_data.json');
     if(value)
-      if(value.refNum.toString().length == 11)
+      if(compareData(customData, value.refNum) == null)
+        Alert.alert("Account not found");
+      else if (test(customData, value.refNum))
         ServiceSelector();
       else
         console.log("Broadband Pressed");
@@ -54,7 +69,7 @@ export default function App() {
   const ServiceSelector = () =>
     Alert.alert(
       "Select Service",
-      "My Alert Msg",
+      "Please select a service below",
       [
         {
           text: "Landline",

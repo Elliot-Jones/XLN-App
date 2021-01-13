@@ -1,0 +1,163 @@
+[
+  {
+    "cli_cus_key": 444658,
+    "cli_line_number": "01572822144",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444659,
+    "cli_line_number": "01146597858",
+    "dsl_active": 0,
+    "care_level": 1,
+    "business_assurance": 1
+  },
+  {
+    "cli_cus_key": 444660,
+    "cli_line_number": "01169876586",
+    "dsl_active": 0,
+    "care_level": 1,
+    "business_assurance": 1
+  },
+  {
+    "cli_cus_key": 444661,
+    "cli_line_number": "02048998444",
+    "dsl_active": 0,
+    "care_level": 1,
+    "business_assurance": 1
+  },
+  {
+    "cli_cus_key": 444662,
+    "cli_line_number": "02096847897",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444663,
+    "cli_line_number": "02065474986",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444664,
+    "cli_line_number": "01572456462",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444665,
+    "cli_line_number": "01144564645",
+    "dsl_active": 1,
+    "care_level": 2,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444666,
+    "cli_line_number": "01181265465",
+    "dsl_active": 1,
+    "care_level": 3,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444667,
+    "cli_line_number": "01164856498",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444668,
+    "cli_line_number": "01215564649",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444669,
+    "cli_line_number": "01144897446",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444670,
+    "cli_line_number": "01163312695",
+    "dsl_active": 0,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444671,
+    "cli_line_number": "01211564654",
+    "dsl_active": 1,
+    "care_level": 4,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444672,
+    "cli_line_number": "02045646536",
+    "dsl_active": 1,
+    "care_level": 3,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444673,
+    "cli_line_number": "01215646545",
+    "dsl_active": 0,
+    "care_level": 2,
+    "business_assurance": 1
+  },
+  {
+    "cli_cus_key": 444674,
+    "cli_line_number": "01615644878",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444675,
+    "cli_line_number": "01135486789",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444676,
+    "cli_line_number": "01225856789",
+    "dsl_active": 0,
+    "care_level": 4,
+    "business_assurance": 1
+  },
+  {
+    "cli_cus_key": 444677,
+    "cli_line_number": "01176546549",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444678,
+    "cli_line_number": "01482654654",
+    "dsl_active": 1,
+    "care_level": 2,
+    "business_assurance": 0
+  },
+  {
+    "cli_cus_key": 444679,
+    "cli_line_number": "01482654065",
+    "dsl_active": 1,
+    "care_level": 1,
+    "business_assurance": 2
+  },
+  {
+    "cli_cus_key": 444680,
+    "cli_line_number": "01173214566",
+    "dsl_active": 1,
+    "care_level": 2,
+    "business_assurance": 2
+  }
+]
