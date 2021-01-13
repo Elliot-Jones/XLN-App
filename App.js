@@ -58,7 +58,7 @@ export default function App() {
     if(value)
       if(compareData(customData, value.refNum) == null)
         Alert.alert("Account not found");
-      else if (test(customData, value.refNum))
+      else if (compareData(customData, value.refNum))
         ServiceSelector();
       else
         console.log("Broadband Pressed");
