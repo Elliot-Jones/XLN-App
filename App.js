@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {TouchableOpacity, TextInput, Image, StyleSheet, Text, View, Button} from 'react-native';
-import ImagePicker from 'react-native-image-picker'
+import {TouchableOpacity, TextInput, Image, StyleSheet, Text, View} from 'react-native';
 import logo from './assets/logo2.png';
 
 export default function App() {
@@ -58,36 +57,3 @@ const styles = StyleSheet.create({
 
   }
 });
-
-// Choose an image
-export default class Camera extends React.Component {
-  state = {
-    photo: null,
-  }
-// Choose the Image
-  handleChoosePhoto = () => {
-    const options = {
-      noData: true,
-    }
-    ImagePicker.launchImageLibrary(options, response => {
-      if (response.uri) {
-        this.setState({ photo: response })
-      }
-    })
-  }
-// Show selected photo
-  render() {
-    const { photo } = this.state
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        {photo && (
-          <Image
-            source={{ uri: photo.uri }}
-            style={{ width: 300, height: 300 }}
-          />
-        )}
-        <Button title="Choose Photo" onPress={this.handleChoosePhoto} />
-      </View>
-    )
-  }
-}
