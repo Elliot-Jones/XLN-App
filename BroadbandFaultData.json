@@ -1,21 +1,21 @@
 [
     {
-        "BBName": "No Sync",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "No Sync",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario", "Have you tried to test the socket?", "Has the micro filter been changed?", 
             "Has the DLS cable been changed?", "Are you able to replace the Micro Filter or DSL cable? if you can't use phone wire direct to router without filter, to rule out these two options",
             "Would like to call divert until you are able to change the DLS or the Micro Filter?", "Please revert to the previous setup if you would not like to call divert"]
     },
     {
-        "BBName": "No Authentication",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "No Authentication",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario", "Can you try Factory resetting the router", 
             "Please provide us with your Routers MAC Address"]
 
     },
     {
-        "BBName": "Slow Throughput",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "Slow Throughput",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario",
             "What is your current internet speed?", "Can you try Factory resetting the router", "Have you ran the speed test with only one device connected to the Wi-Fi?", 
             "Are the Internet speed test same on both PC and Mobile phone?", "Have you tried to test the socket", 
@@ -23,15 +23,15 @@
             "Would like to call divert until you are able to change the DLS or the Micro Filter?", "Please revert to the previous setup if you would not like to call divert"]
     },
     {
-        "BBName": "Browsing",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "Browsing",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario","Remove Wi-Fi boosters and network switch","Is the browsing error website specific? If so try the website at a different time",
             "Is anything connected to the red port?", "Can you try Factory resetting the router", "Is this issue happening on Multiple devices? also is it on both Wi-Fi and Wired?",
             "can you access the router page? (192.168.1.1)", "Are you able to try a different router?"]
     },
     {
-        "BBName": "Slow Sync Speeds",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "Slow Sync Speeds",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario","Describe your set up from NTE", "Have you tried to test the socket", 
             "Has the micro filter been changed?", "Has the DLS cable been changed?", 
             "Are you able to replace the Micro Filter or DSL cable? if you can't use phone wire direct to router without filter, to rule out these two options",
@@ -39,8 +39,8 @@
             "Has there been any electrical issues or storms? if yes alternative router is needed", "What is your current speed?"]
     },
     {
-        "BBName": "intermittent connection",
-        "BBStep": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Name": "intermittent connection",
+        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario", "Describe your set up from NTE", "is the broadband light on/flashing/off?",
             "Are you able to replace the Micro Filter or DSL cable? if you can't use phone wire direct to router without filter, to rule out these two options",
             "is the circuit stable? Would like to call divert until you are able to change the DLS or the Micro Filter?", 

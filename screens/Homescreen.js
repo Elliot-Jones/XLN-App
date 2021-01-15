@@ -61,7 +61,7 @@ export function HomeScreen({navigation}){
       else if (compareData(customData, value.refNum))
         ServiceSelector();
       else
-        navigation.navigate('Broadband');
+        navigation.navigate('Step Selector' , {selection: "Landline"});
     else
     console.log('Error');
   }
@@ -73,9 +73,9 @@ export function HomeScreen({navigation}){
       [
         {
           text: "Landline",
-          onPress: () => navigation.navigate('Landline'),
+          onPress: () => navigation.navigate('Step Selector' , {selection: "Landline"}),
         },
-        { text: "Broadband", onPress: () => navigation.navigate('Broadband')}
+        { text: "Broadband", onPress: () => navigation.navigate('Step Selector' , {selection: "Broadband"})}
       ]
     );
 

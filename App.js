@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Broadband } from './screens/Broadband.js';
-import { Landline } from './screens/Landline.js';
+import { Stepselector } from './screens/Stepselector.js';
 import { HomeScreen } from './screens/Homescreen.js';
 
 
@@ -13,8 +12,7 @@ export default function App() {
     <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Broadband" component={Broadband} />
-          <Stack.Screen name="Landline" component={Landline} />
+          <Stack.Screen name="Step Selector" component={Stepselector} />
         </Stack.Navigator>
     </NavigationContainer>
   )
