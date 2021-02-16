@@ -7,7 +7,7 @@ function ListAll(array, navigation){
   return array.map(function(item,i){
     return(
       <View key={i}>
-        <TouchableOpacity onPress={() => navigation.navigate('')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Step Display' , {selection: (i)})}>
           <Text>{(item.Name)}</Text>
         </TouchableOpacity>
       </View>
@@ -16,7 +16,7 @@ function ListAll(array, navigation){
 }
 
 
-export function Stepselector ({ route, navigation }) {
+export function Step_Selector ({ route, navigation }) {
   const {selection} = route.params;
   if((selection) == ("Broadband")){
     faultData = require('../BroadbandFaultData.json');
@@ -32,4 +32,4 @@ export function Stepselector ({ route, navigation }) {
       </View>
     );
   }
-  export default Stepselector;
+  export default Step_Selector;
