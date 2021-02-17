@@ -49,6 +49,12 @@ function DisplayStep(array, i,j){
           <Form type={yesNo}/>
         </View>
       )
+    default:
+      return(
+      <View>
+      <Text>{array[i].Steps[j]}</Text>
+    </View>
+      )
   }
 }
 
