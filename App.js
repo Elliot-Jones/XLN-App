@@ -1,31 +1,185 @@
+
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Stepselector } from './screens/Stepselector.js';
-import { HomeScreen } from './screens/Homescreen.js';
-import InfoScreen from './screens/InfoScreen.js';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Permissions, Alert } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 
-const Tab = createBottomTabNavigator();
-function MyTabs() {
-	return (
-		<Tab.Navigator>
-			<Tab.Screen name="Home" component={HomeScreen} />
-			<Tab.Screen name="Info" component={InfoScreen} />
-		</Tab.Navigator>
-	);
-}
+import *as Sharing from 'expo-sharing';
+import logo from './assets/logo.png';
 
-const Stack = createStackNavigator();
+/// select imgae form camera roll
 export default function App() {
+  const [selectedImage, setSelectedImage] = React.useState(null);
+  let OpenImagePickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("permisssion is requred to acces camera");
+      return;
+    }
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+
+    setSelectedImage({ localUri: pickerResult.uri });
+
+  };
+// to open camera // so far only asks for permission 
+  const pickFromCamera = async () => {
+    const { granted } = await Permissions.askAsync(Permissions.CAMERA)
+    if (granted) {
+
+      let data = await ImagePicker.launchCameraAsync({
+        mediatypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.5
+
+      })
+      console.log(data)
+    } else { Alert.alert("we need permission to work ")}
+  }
+
+  /*  let openShareDialogAsync = async () => {
+     if (!(await Sharing.isAvailableAsync())) {
+       alert('you cant share');
+ 
+       return;
+     }
+     await Sharing.shareAsync(selectedImage.localUri)
+   };
+ */
+
+// where ill store the selected image  
+  let _subbmitphoto = async () => {
+    alert('photo subbmited')
+    setSelectedImage({ logo });
+
+  };
+
+  if (selectedImage !== null) {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={OpenImagePickerAsync}
+          style={styles.buton}><Text sytle={winger.container}>add photo</Text>
+          <Image
+            source={{ uri: selectedImage.localUri }}
+            style={styles.logo}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={_subbmitphoto}  // {async()=>
+          style={styles.buton2}>
+          <Text sytle={styles.butontext}>subbmit photo</Text>
+
+
+        </TouchableOpacity>
+
+
+
+      </View>
+    );
+  }
+
+
+
   return (
-    <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={MyTabs} />
-          <Stack.Screen name="Step Selector" component={Stepselector} />
-        </Stack.Navigator>
-    </NavigationContainer>
-  )
+    <View style={styles.container}>
+      <Text style={styles.instructions}>
+        Step 1 </Text>
+      <Text style={styles.instructions}>
+        Power off the connected computers and then disconect the router
+      </Text>
+      < Image source={logo} style={styles.logo} />
+
+
+
+      <TouchableOpacity
+
+        onPress={OpenImagePickerAsync}
+        style={styles.buton2}>
+        <Text style={styles.butontext}> pick a photo </Text>
+
+      </TouchableOpacity>
+      <TouchableOpacity
+
+        onPress={pickFromCamera}
+        style={styles.buton2}>
+        <Text style={styles.butontext}> take a photo </Text>
+
+      </TouchableOpacity>
+
+
+
+    </View>
+  );
+
 }
 
 
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+
+  logo: {
+    width: 405,
+    height: 359,
+
+
+  },
+  instructions:
+  {
+    color: '#f0f',
+
+    marginBottom: 10,
+    marginTop: 10,
+    marginHorizontal: 20,
+  },
+  butontext:
+  {
+    color: '#D0D0D0',
+    textAlign: 'center',
+
+  },
+  buton: {
+
+    backgroundColor: 'white',
+    padding: 15,
+    borderRadius: 10,
+    marginTop: 20,
+    marginHorizontal: 20,
+
+  },
+  buton2:
+  {
+    backgroundColor: '	rgb(0, 191, 255)',
+    padding: 20,
+    borderRadius: 10,
+    marginTop: 20,
+  },
+
+
+
+});
+const winger = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: 'red',
+    textAlign: 'right',
+    justifyContent: 'center',
+
+  },
+
+
+
+});
