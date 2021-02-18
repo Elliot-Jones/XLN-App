@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Permissions, Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-
+import {Camera} from 'expo-camera';
 import *as Sharing from 'expo-sharing';
 import logo from './assets/logo.png';
+
+// handles image taking
 
 /// select imgae form camera roll
 export default function App() {
@@ -21,14 +23,15 @@ export default function App() {
     if (pickerResult.cancelled === true) {
       return;
     }
-
+     console.log(pickerResult)
     setSelectedImage({ localUri: pickerResult.uri });
 
   };
-// to open camera // so far only asks for permission 
-  const pickFromCamera = async () => {
-    const { granted } = await Permissions.askAsync(Permissions.CAMERA)
-    if (granted) {
+// to open camera take image and render it back to the screen // does not ask for  permission 
+const [takeimage,settakeimage] = React.useState(null);
+  
+const pickFromCamera = async () => {
+   
 
       let data = await ImagePicker.launchCameraAsync({
         mediatypes: ImagePicker.MediaTypeOptions.Images,
@@ -37,9 +40,16 @@ export default function App() {
         quality: 0.5
 
       })
-      console.log(data)
-    } else { Alert.alert("we need permission to work ")}
+
+      if (data.cancelled === true) {
+        return;
+      }
+      console.log(data) // image data stored here
+      settakeimage({localUri:data.uri})
+      
   }
+
+
 
   /*  let openShareDialogAsync = async () => {
      if (!(await Sharing.isAvailableAsync())) {
@@ -55,16 +65,34 @@ export default function App() {
   let _subbmitphoto = async () => {
     alert('photo subbmited')
     setSelectedImage({ logo });
-
+      return;
   };
 
   if (selectedImage !== null) {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={OpenImagePickerAsync}
-          style={styles.buton}><Text sytle={winger.container}>add photo</Text>
+          style={styles.buton}>
           <Image
             source={{ uri: selectedImage.localUri }}
+            style={styles.logo}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={_subbmitphoto}  // {async()=>
+          style={styles.buton2}>
+          <Text sytle={styles.butontext}>subbmit photo</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+ if (takeimage!=null){
+     return (
+      <View style={styles.container}>
+        <TouchableOpacity onPress={pickFromCamera}
+          style={styles.buton}>
+          <Image
+            source={{ uri: takeimage.localUri }}
             style={styles.logo}
           />
         </TouchableOpacity>
@@ -80,18 +108,17 @@ export default function App() {
 
       </View>
     );
-  }
-
+     }
 
 
   return (
     <View style={styles.container}>
       <Text style={styles.instructions}>
-        Step 1 </Text>
+         </Text>
       <Text style={styles.instructions}>
-        Power off the connected computers and then disconect the router
+       
       </Text>
-      < Image source={logo} style={styles.logo} />
+     
 
 
 
@@ -109,7 +136,7 @@ export default function App() {
         <Text style={styles.butontext}> take a photo </Text>
 
       </TouchableOpacity>
-
+        
 
 
     </View>
