@@ -7,7 +7,7 @@ function ListAll(array, navigation){
   return array.map(function(item,i){
     return(
       <View key={i}>
-        <TouchableOpacity onPress={() => navigation.navigate('Step Display' , {selection: (i)})}>
+        <TouchableOpacity onPress={() => navigation.navigate('Step Display' , {selection: (i),faultData: (array)})}>
           <Text>{(item.Name)}</Text>
         </TouchableOpacity>
       </View>
