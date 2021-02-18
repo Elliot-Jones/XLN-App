@@ -1,16 +1,10 @@
 import {StyleSheet} from 'react-native'
 
-const App = () => (
-  <View style={styles.container}>
-    <Text style={styles.row}>React</Text>
-    <Text style={styles.row}>Native</Text>
-  </View>
-)
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
       padding: 24,
-      backgroundColor: '#fff',
+      backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -22,20 +16,29 @@ export const styles = StyleSheet.create({
       top: 50,
     },
     body: {
+      flex: 1,
       textAlign: "center",
       fontSize: 20,
       color: "#3e3d40"
     },
+    header: {
+      textAlign: "center",
+      fontSize: 30,
+      fontWeight: 'bold',
+      color: "#3e3d40"
+    },
     logo: {
+      maxHeight:159,
+      maxWidth:400,
       position: 'absolute',
       top: 100
     },
     row: {
       padding: 4,
-      borderBottomColor: "#fff",
+      borderBottomColor: "#ffffff",
       borderBottomWidth: StyleSheet.hairlineWidth
     }
 });
 
-export default App;
+export default StyleSheet;
 

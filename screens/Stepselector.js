@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {styles} from '../styles/styles.js';
 
 function ListAll(array, navigation){
   return array.map(function(item,i){
@@ -26,8 +25,8 @@ export function Step_Selector ({ route, navigation }) {
   }
 
     return (
-      <View>
-          <Text style = "font-weight: bold">{selection}</Text>
+      <View style={styles.container}>
+          <Text style ={styles.header}>{selection}</Text>
           {ListAll(faultData, navigation)}
       </View>
     );

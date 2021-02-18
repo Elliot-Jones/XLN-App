@@ -69,9 +69,9 @@ function DisplayStep(array, i,j){
     
     const {selection, faultData} = route.params;
     const [test, setTest] = useState(DisplayStep(faultData,selection,j));
-    return (
-      <View>
-            <Text style = "font-weight: bold">{test}</Text>
+      return (
+        <View style={styles.container}>
+            <Text style = {styles.body}>{test}</Text>
             <Button title='Next' onPress = {() => {j++; setTest(DisplayStep(faultData,selection,j));}}/>
         </View>
       );
