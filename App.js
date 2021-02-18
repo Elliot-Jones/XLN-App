@@ -47,7 +47,7 @@ export default function App() {
     }
     console.log(data.base64) // image data stored here
     settakeimage({ localUri: data.uri })
-   // saves photo to cameraroll // creates folder "tutorial where photo is saved"
+   // saves photo to cameraroll // creates folder "Tutorial where photo is saved"
     const assert = await MediaLibrary.createAssetAsync(data.uri);
     await MediaLibrary.createAlbumAsync("Tutorial", assert);
   }
@@ -118,13 +118,13 @@ export default function App() {
 
 
 
-      <TouchableOpacity
+    /* <TouchableOpacity
 
         onPress={OpenImagePickerAsync}
         style={styles.buton2}>
         <Text style={styles.butontext}> pick a photo </Text>
 
-      </TouchableOpacity>
+      </TouchableOpacity>*/
       <TouchableOpacity
 
         onPress={pickFromCamera}
