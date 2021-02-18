@@ -51,15 +51,7 @@ const pickFromCamera = async () => {
 
 
 
-  /*  let openShareDialogAsync = async () => {
-     if (!(await Sharing.isAvailableAsync())) {
-       alert('you cant share');
- 
-       return;
-     }
-     await Sharing.shareAsync(selectedImage.localUri)
-   };
- */
+  
 
 // where ill store the selected image  
   let _subbmitphoto = async () => {
