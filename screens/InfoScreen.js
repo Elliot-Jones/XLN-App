@@ -6,7 +6,7 @@ import logo from '../assets/logo2.png';
 
 export function InfoScreen (){
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.container}>
         <Image source={logo} style={styles.logo}/>
         <Hyperlink linkDefault
             linkStyle={{color: '#2980b9', fontSize: 20}}

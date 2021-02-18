@@ -81,7 +81,6 @@ export function HomeScreen({navigation}){
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
       <Form 
           ref={c => this._form = c}
