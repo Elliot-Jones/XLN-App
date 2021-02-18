@@ -3,6 +3,7 @@ import {Text, View, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
 function ListAll(array, navigation){
   return array.map(function(item,i){
     return(

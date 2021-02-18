@@ -1,9 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, StyleSheets, Text, View, Button, Alert } from 'react-native';
+import {Image, StyleSheets, Text, View, Button, Alert, Asset} from 'react-native';
 import logo from '../assets/logo2.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
+import * as MailComposer from 'expo-mail-composer';    //Mail
+import * as Linking from 'expo-linking';                //Mail
+import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';        //PDF
+import Constants from 'expo-constants';
+//Asset.fromModule(require('./PDF/ImageReport.pdf')).downloadAsync();
+//Asset.fromModule(require('./PDF/ImageReport.pdf')).localUri;
 
 const Form = t.form.Form
 var refNum = t.refinement(t.Number, function (n) { return (n.toString().length == 6 || ("0" + n.toString()).length == 11 ); })
@@ -52,6 +58,7 @@ function compareData(array,key){
 }
 
 export function HomeScreen({navigation}){
+  
   handleSubmit = () => {
     const value = this._form.getValue();
     customData = require('../cus_data.json');
@@ -65,7 +72,13 @@ export function HomeScreen({navigation}){
     else
     console.log('Error');
   }
-
+  handlePress = () => {
+    MailComposer.composeAsync({
+      recipients: ['Bartosz12346@gmail.com'],
+      subject: 'XLN Troubleshooting',
+      body: 'PLEASE ATTACH THE IMAGES AS PROOF',
+    });
+  }
   const ServiceSelector = () =>
     Alert.alert(
       "Select Service",
@@ -92,11 +105,19 @@ export function HomeScreen({navigation}){
           title="Log in"
           onPress={this.handleSubmit}
         />
+        
+        <Button
+          title="Email Us"
+          onPress={()=>this.handlePress()}
+        />
+        
       <StatusBar style="auto" />
     </View>
   );
+  
 }
 export default HomeScreen;
+
 
 const formStyles = {
     ...Form.stylesheet,
@@ -121,4 +142,5 @@ const formStyles = {
       }
     }
   }
-  
+
+ 
