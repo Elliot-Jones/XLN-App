@@ -24,7 +24,7 @@
     },
     {
         "Name": "Browsing",
-        "Steps": ["Is the telephone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
+        "Steps": ["Is the teleqphone line working?", "Are you able to receive and make calls? or is it just outgoing", "If you are able to make calls please call 17070", 
             "If number is different than expected, switch to landline fault scenario","Remove Wi-Fi boosters and network switch","Is the browsing error website specific? If so try the website at a different time",
             "Is anything connected to the red port?", "Can you try Factory resetting the router", "Is this issue happening on Multiple devices? also is it on both Wi-Fi and Wired?",
             "can you access the router page? (192.168.1.1)", "Are you able to try a different router?"]

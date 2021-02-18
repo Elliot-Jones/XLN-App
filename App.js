@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Stepselector } from './screens/Stepselector.js';
 import { HomeScreen } from './screens/Homescreen.js';
 import InfoScreen from './screens/InfoScreen.js';
+import Email from './screens/Email.js';
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={MyTabs} />
           <Stack.Screen name="Step Selector" component={Stepselector} />
+          <Stack.Screen name="Email" component={Email} />
         </Stack.Navigator>
     </NavigationContainer>
   )

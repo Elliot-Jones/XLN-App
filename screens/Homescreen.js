@@ -72,6 +72,7 @@ export function HomeScreen({navigation}){
     else
     console.log('Error');
   }
+
   handlePress = () => {
     MailComposer.composeAsync({
       recipients: ['Bartosz12346@gmail.com'],
@@ -79,6 +80,7 @@ export function HomeScreen({navigation}){
       body: 'PLEASE ATTACH THE IMAGES AS PROOF',
     });
   }
+
   const ServiceSelector = () =>
     Alert.alert(
       "Select Service",
@@ -86,7 +88,7 @@ export function HomeScreen({navigation}){
       [
         {
           text: "Landline",
-          onPress: () => navigation.navigate('Step Selector' , {selection: "Landline"}),
+          onPress: () => navigation.navigate('Email'),
         },
         { text: "Broadband", onPress: () => navigation.navigate('Step Selector' , {selection: "Broadband"})}
       ]
