@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, View, Linking, Button} from 'react-native';
 import Hyperlink from 'react-native-hyperlink'
 import {styles} from '../styles/styles.js';
 import logo from '../assets/logo.png';
@@ -18,6 +18,10 @@ export function InfoScreen (){
             https://www.xln.co.uk/
             </Text>
         </Hyperlink>
+        <Button
+          onPress={() => Linking.openURL('mailto:service@telecom-service.co.uk?subject=Get_in_touch') }
+          title="Get in touch!"
+        />
       </View>
     );
   }
