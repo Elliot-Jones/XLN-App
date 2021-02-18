@@ -11,13 +11,25 @@ var j = 0;
 const Description = t.struct({
   name:InputStr
 });
-const test = t.enums({
-  Y: 'Yes',
-  N: 'No'
-});
-const yesNo = t.struct({
-  option: test
-});
+var answers = ['','','','','','','','','','','','','','','','','','','','',]
+var ans = 0
+YesS = () =>{
+  answers[ans] = 'Yes';
+  ans = ans + 1
+  console.log (answers)
+}
+
+NoS = () =>{
+  answers[ans] = 'No';
+  ans = ans + 1
+  console.log (answers)
+}
+
+TextBoxTing = () => {
+  answers[ans] = Description;
+  ans = ans + 1
+  console.log (answers)
+}
 
 const options = {
   fields: {
@@ -45,19 +57,30 @@ function DisplayStep(array, i,j){
           <View>
           <Text>{array[i].Steps[j][0]}</Text>
           <Form type={Description} options = {options}/>
+          
           </View>
         )
         case 2:
           return(
-            <View>
+            <View style={styles.container}>
+            <Image source={logo} style={styles.logo}/>
             <Text>{array[i].Steps[j][0]}</Text>
-            <Form type={yesNo} options = {options}/>
+            <Button
+              title="Yes"
+              onPress={this.YesS}
+            />
+            <Button
+              title="No"
+              onPress={this.NoS}
+            />
+            <StatusBar style="auto" />
             </View>
+            
         )
         default:
           return(
             <View>
-        <Text>{array[i].Steps[j]}</Text>
+        <Text>{array[i].Steps[j]+ answers[ans]}</Text>
       </View>
         )
       }
@@ -72,6 +95,7 @@ function DisplayStep(array, i,j){
       return (
         <View style={styles.container}>
             <Text style = {styles.body}>{test}</Text>
+            
             <Button title='Next' onPress = {() => {j++; setTest(DisplayStep(faultData,selection,j));}}/>
         </View>
       );
