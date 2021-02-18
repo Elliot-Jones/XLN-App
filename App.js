@@ -1,10 +1,11 @@
 
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Permissions, Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {Camera} from 'expo-camera';
+import { Camera } from 'expo-camera';
 import *as Sharing from 'expo-sharing';
 import logo from './assets/logo.png';
+import * as MediaLibrary from 'expo-media-library';
 
 // handles image taking
 
@@ -23,41 +24,43 @@ export default function App() {
     if (pickerResult.cancelled === true) {
       return;
     }
-     console.log(pickerResult)
+    console.log(pickerResult)
     setSelectedImage({ localUri: pickerResult.uri });
 
   };
-// to open camera take image and render it back to the screen // does not ask for  permission 
-const [takeimage,settakeimage] = React.useState(null);
-  
-const pickFromCamera = async () => {
-   
+  // to open camera take image and render it back to the screen // does not ask for  permission 
+  const [takeimage, settakeimage] = React.useState(null);
 
-      let data = await ImagePicker.launchCameraAsync({
-        mediatypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [1, 1],
-        quality: 0.5
+  const pickFromCamera = async () => {
 
-      })
 
-      if (data.cancelled === true) {
-        return;
-      }
-      console.log(data) // image data stored here
-      settakeimage({localUri:data.uri})
-      
+    let data = await ImagePicker.launchCameraAsync({
+      mediatypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 0.5
+
+    })
+
+    if (data.cancelled === true) {
+      return;
+    }
+    console.log(data.base64) // image data stored here
+    settakeimage({ localUri: data.uri })
+   // saves photo to cameraroll // creates folder "tutorial where photo is saved"
+    const assert = await MediaLibrary.createAssetAsync(data.uri);
+    await MediaLibrary.createAlbumAsync("Tutorial", assert);
   }
 
 
 
-  
 
-// where ill store the selected image  
+
+  // where ill store the selected image  
   let _subbmitphoto = async () => {
     alert('photo subbmited')
     setSelectedImage({ logo });
-      return;
+    return;
   };
 
   if (selectedImage !== null) {
@@ -78,8 +81,9 @@ const pickFromCamera = async () => {
       </View>
     );
   }
- if (takeimage!=null){
-     return (
+  if (takeimage !== null) {
+
+    return (
       <View style={styles.container}>
         <TouchableOpacity onPress={pickFromCamera}
           style={styles.buton}>
@@ -100,17 +104,17 @@ const pickFromCamera = async () => {
 
       </View>
     );
-     }
+  }
 
 
   return (
     <View style={styles.container}>
       <Text style={styles.instructions}>
-         </Text>
-      <Text style={styles.instructions}>
-       
       </Text>
-     
+      <Text style={styles.instructions}>
+
+      </Text>
+
 
 
 
@@ -128,7 +132,7 @@ const pickFromCamera = async () => {
         <Text style={styles.butontext}> take a photo </Text>
 
       </TouchableOpacity>
-        
+
 
 
     </View>
