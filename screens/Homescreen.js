@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Image, StyleSheets, Text, View, Button, Alert } from 'react-native';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
 
@@ -81,7 +81,6 @@ export function HomeScreen({navigation}){
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>XLN App</Text>
       <Image source={logo} style={styles.logo}/>
       <Form 
           ref={c => this._form = c}

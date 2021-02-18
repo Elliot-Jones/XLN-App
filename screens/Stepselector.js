@@ -1,13 +1,12 @@
 import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {styles} from '../styles/styles.js';
 
 function ListAll(array, navigation){
   return array.map(function(item,i){
     return(
       <View key={i}>
-        <TouchableOpacity onPress={() => navigation.navigate('')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Step Display' , {selection: (i),faultData: (array)})}>
           <Text>{(item.Name)}</Text>
         </TouchableOpacity>
       </View>
@@ -16,7 +15,7 @@ function ListAll(array, navigation){
 }
 
 
-export function Stepselector ({ route, navigation }) {
+export function Step_Selector ({ route, navigation }) {
   const {selection} = route.params;
   if((selection) == ("Broadband")){
     faultData = require('../BroadbandFaultData.json');
@@ -26,10 +25,10 @@ export function Stepselector ({ route, navigation }) {
   }
 
     return (
-      <View>
-          <Text style = "font-weight: bold">{selection}</Text>
+      <View style={styles.container}>
+          <Text style ={styles.header}>{selection}</Text>
           {ListAll(faultData, navigation)}
       </View>
     );
   }
-  export default Stepselector;
+  export default Step_Selector;
