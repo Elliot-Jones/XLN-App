@@ -26,6 +26,16 @@ export function Email({navigation}){
         {
             EmailBody = EmailBody + "\n" + Question + " = "+ array[i]
         }
+        if (i == array.length)
+        {
+            handlePress = () => {
+                MailComposer.composeAsync({
+                  recipients: ['Bartosz12346@gmail.com'],
+                  subject: 'XLN Troubleshooting',
+                  body: EmailBody,
+                });
+            }
+        }
     }
 
     return (
