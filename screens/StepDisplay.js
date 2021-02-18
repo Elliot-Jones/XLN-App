@@ -33,7 +33,6 @@ const options = {
 
 
 function DisplayStep(array, i,j){
-  console.log(j);
   
   if(j > array[i].Steps.length-1){
       console.log("Here");
@@ -69,6 +68,11 @@ function DisplayStep(array, i,j){
     
     const {selection, faultData} = route.params;
     const [test, setTest] = useState(DisplayStep(faultData,selection,j));
+    console.log(j);
+    console.log(faultData[selection].Steps.length);
+    if(j > faultData[selection].Steps.length-1){
+      navigation.navigate("Email"  , {selection: (selection),faultData: (faultData)});
+    }
       return (
         <View style={styles.container}>
             <Text style = {styles.body}>{test}</Text>

@@ -7,6 +7,7 @@ import  HomeScreen  from './screens/Homescreen.js';
 import InfoScreen from './screens/InfoScreen.js';
 import  StepDisplay  from './screens/StepDisplay.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Email from './screens/Email.js';
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
@@ -43,6 +44,7 @@ export default function App() {
           <Stack.Screen name="Info" component={MyTabs}/>
           <Stack.Screen name="Step Selector" component={StepSelector} />
           <Stack.Screen name="Step Display" component={StepDisplay} />
+          <Stack.Screen name="Email" component={Email} />
         </Stack.Navigator>
     </NavigationContainer>
   )
