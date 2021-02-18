@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import Hyperlink from 'react-native-hyperlink'
 import {styles} from '../styles/styles.js';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo.png';
 
 export function InfoScreen (){
     return (
@@ -12,7 +12,7 @@ export function InfoScreen (){
             linkStyle={{color: '#2980b9', fontSize: 20}}
             linkText={ 
                 url => url === 'https://www.xln.co.uk/' ? 
-                'Click for XLN website' : url }
+                'XLN website' : url }
         >
             <Text style={ { fontSize: 15 } }>
             https://www.xln.co.uk/

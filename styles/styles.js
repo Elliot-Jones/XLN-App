@@ -28,6 +28,8 @@ export const styles = StyleSheet.create({
       color: "#3e3d40"
     },
     logo: {
+      maxHeight:159,
+      maxWidth:400,
       position: 'absolute',
       top: 100
     },

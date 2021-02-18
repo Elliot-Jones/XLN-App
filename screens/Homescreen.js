@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Image, StyleSheets, Text, View, Button, Alert } from 'react-native';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
 
