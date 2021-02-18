@@ -1,14 +1,14 @@
 [
     {
         "Name": "Inital Troubleshooting steps",
-        "Steps": [ ["Are you able to Make any calls?", 2],["If you are able to make calls try contacting us on 17070",2],
-            ["Is your connection intermittent and preventing you from calling us?",2],["Have you tried using the test socket?",2],
-            ["Has the micro filter been changed?",2], ["Have you tried an alteranative handset?",2],["What is your contact number?",1]
+        "Steps": ["Are you able to Make any calls?","If you are able to make calls try contacting us on 17070",
+            "Is your connection intermittent and preventing you from calling us?","Have you tried using the test socket?",
+            "Has the micro filter been changed?","Have you tried an alteranative handset?","What is your contact number?"
         ]
     },
     {
         "Name": "Damaged hardware steps",
-        "Steps": [["Are you able to both make or recieve calls?",2],["Are you able to make outgoing calls?", 2], ["Is divert required?",2],["Please, provide us with your phone number",1], 
-            ["Please, provide us with photos of the damage",2]]
+        "Steps": ["Are you able to both make or recieve calls?","Are you able to make outgoing calls?", "Is divert required?","Please, provide us with your phone number", 
+            "Please, provide us with photos of the damage"]
     }
 ]
