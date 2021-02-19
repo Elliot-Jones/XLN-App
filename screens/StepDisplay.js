@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import {Image, StyleSheets, Text, View, Button, Alert , TextInput} from 'react-native';
+import {StyleSheets, Text, View, Button, TouchableOpacity, Alert , TextInput} from 'react-native';
 import logo from '../assets/logo2.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
@@ -64,14 +64,21 @@ function DisplayStep(array, i,j){
           return(
             <View>
             <Text>{array[i].Steps[j][0]}</Text>
-            <Button
-              title="Yes"
-              onPress= {this.YesS}
-            />
-            <Button
-              title="No"
-              onPress={this.NoS}
-            />
+            <TouchableOpacity style = {styles.button} onPress= {YesS()}>
+              <View>
+                <Text style={{fontSize: 20, textAlign: 'center', fontWeight:'bold', color: '#ffffff'}}>
+                  Yes
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <View style={styles.space}/>
+            <TouchableOpacity style = {styles.button} onPress= {NoS()}>
+              <View>
+                <Text style={{fontSize: 20, textAlign: 'center', fontWeight:'bold', color: '#ffffff'}}>
+                  No
+                </Text>
+              </View>
+            </TouchableOpacity>
             <StatusBar style="auto" />
             </View>
         )
@@ -97,8 +104,21 @@ function DisplayStep(array, i,j){
       return (
         <View style={styles.container}>
             <Text style = {styles.body}>{step}</Text>
-            <Button title='Next' onPress = {() => {j++; setStep(DisplayStep(faultData,selection,j, false));}}/>
-            <Button title = 'Back' onPress = {() => {j--; setStep(DisplayStep(faultData,selection,j, false));}}/>
+            <TouchableOpacity style = {styles.button} onPress = {() => {j++; setStep(DisplayStep(faultData,selection,j, false));}}>
+              <View>
+                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                  Next
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <View style={styles.space}/>
+            <TouchableOpacity style = {styles.button} onPress = {() => {j--; setStep(DisplayStep(faultData,selection,j, false));}}>
+              <View>
+                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                  Back
+                </Text>
+              </View>
+            </TouchableOpacity>
         </View>
       );
     }

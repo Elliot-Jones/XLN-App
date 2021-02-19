@@ -20,7 +20,7 @@ export function InfoScreen (){
         onPress={() => Linking.openURL('https://www.xln.co.uk/') }
         style={styles.button}>
           <View>
-              <Text style={{fontSize: 20, color: '#ffffff'}}>
+              <Text style={{fontSize: 20, fontWeight:'bold', color: '#ffffff'}}>
               XLN Website
               </Text>
           </View>
@@ -30,7 +30,7 @@ export function InfoScreen (){
           style={styles.button}
           onPress={() => handlePress()}>
           <View>
-            <Text style={{fontSize: 20, color: '#ffffff'}}>
+            <Text style={{fontSize: 20, fontWeight:'bold', color: '#ffffff'}}>
               Get in touch!
             </Text>
           </View>
