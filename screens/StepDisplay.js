@@ -119,6 +119,14 @@ function DisplayStep(array, i,j){
                 </Text>
               </View>
             </TouchableOpacity>
+            <View style={styles.space}/>
+            <TouchableOpacity style = {styles.button} onPress = {() => {j=0; setStep(DisplayStep(faultData,selection, j))}}>
+              <View>
+                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                  Go to start
+                </Text>
+              </View>
+            </TouchableOpacity>
         </View>
       );
     }
