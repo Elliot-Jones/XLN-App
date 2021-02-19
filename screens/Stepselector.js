@@ -14,7 +14,6 @@ function ListAll(array, navigation){
   })
 }
 
-
 export function Step_Selector ({ route, navigation }) {
   const {selection} = route.params;
   if((selection) == ("Broadband")){
@@ -23,7 +22,6 @@ export function Step_Selector ({ route, navigation }) {
   else{
     faultData = require('../LandlineFaultData.json');
   }
-
     return (
       <View style={styles.container}>
           <Text style ={styles.header}>{selection}</Text>
