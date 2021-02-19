@@ -8,7 +8,6 @@ import * as MailComposer from 'expo-mail-composer';    //Mail
 
 const Form = t.form.Form
 export function Email({route, navigation}){
-  
   handlePress = () => {
 
   }
@@ -16,11 +15,11 @@ export function Email({route, navigation}){
     handlePress = () => {
         var i ; // Make sure that there is a loop inside the step selector so that it can store the response 
         var array = ["Yes", "No", "Yes", "No", "Yes", "No", "No", "Yes", "No", "No" ];
-        const {selection, faultData} = route.params;
+        const {selection, faultData, responses} = route.params;
         var EmailBody = "This is the history of the anwsers for the troubleshooting...\n " + faultData[selection].Name;
-        for (var i = 0; i < faultData[selection].Steps.length-1; i++)
+        for (var i = 0; i < faultData[selection].Steps.length; i++)
         {
-            EmailBody = EmailBody + "\n\n" + faultData[selection].Steps[i][0] + " = "+ array[i];
+            EmailBody = EmailBody + "\n\n" + faultData[selection].Steps[i][0] + " = "+ responses[i];
         }
                 MailComposer.composeAsync({
                   recipients: ['service@telecom-service.co.uk'],
