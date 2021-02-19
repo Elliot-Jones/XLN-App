@@ -56,7 +56,7 @@ function DisplayStep(array, i,j){
           <View>
           <Text>{array[i].Steps[j][0]}</Text>
           <TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
     />
           </View>
         )
