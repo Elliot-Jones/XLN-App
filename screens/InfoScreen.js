@@ -15,7 +15,6 @@ export function InfoScreen (){
     return (
       <View style={styles.container}>
         <Image source={logo} style={styles.logo}/>
-
         <TouchableOpacity
         onPress={() => Linking.openURL('https://www.xln.co.uk/') }
         style={styles.button}>

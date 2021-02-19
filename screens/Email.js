@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image, StyleSheets, Text, View, Button, Alert, Asset} from 'react-native';
+import {Image, StyleSheets, Text, View, TouchableOpacity, Alert, Asset} from 'react-native';
 import logo from '../assets/logo.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
@@ -26,14 +26,17 @@ export function Email({route, navigation}){
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>XLN App</Text>
+        <Text style={styles.body}>Thank you for using our troubleshooter </Text>
+        <Text style={styles.body}>Please click the link below to email our team</Text>
         <Image source={logo} style={styles.logo}/>
-                  
-          <Button
-            title="Email Us"
-            onPress={()=>this.handlePress()}
-          />
+        <TouchableOpacity style={styles.button}  onPress={()=>this.handlePress()}>
+        <View>
+              <Text style={styles.buttonText}>
+              Email Us
+              </Text>
+          </View>
           
+        </TouchableOpacity>        
         <StatusBar style="auto" />
       </View>
     );

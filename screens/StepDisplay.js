@@ -63,7 +63,7 @@ function DisplayStep(array, i,j){
         case 2:
           return(
             <View>
-            <Text>{array[i].Steps[j][0]}</Text>
+            <Text style={styles.body}>{array[i].Steps[j][0]}</Text>
             <TouchableOpacity style = {styles.button} onPress= {this.YesS}>
               <View>
                 <Text style={styles.buttonText}>

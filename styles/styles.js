@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
       top: 50,
     },
     body: {
-      flex: 1,
+      margin: 10,
       textAlign: "center",
       fontSize: 20,
       color: "#3e3d40"
