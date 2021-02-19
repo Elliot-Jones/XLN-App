@@ -1,11 +1,17 @@
 import React from 'react';
 import {Image, Text, View, Linking, Button} from 'react-native';
-import Hyperlink from 'react-native-hyperlink'
+import * as MailComposer from 'expo-mail-composer';
 import {styles} from '../styles/styles.js';
 import logo from '../assets/logo.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export function InfoScreen (){
+  handlePress = () => {
+    MailComposer.composeAsync({
+      recipients: ['service@telecom-service.co.uk'],
+      subject: 'XLN get in touch',
+    });
+  }
     return (
       <View style={styles.container}>
         <Image source={logo} style={styles.logo}/>
@@ -21,12 +27,12 @@ export function InfoScreen (){
         </TouchableOpacity>
         <View style={styles.space} />
         <TouchableOpacity
-        onPress={() => Linking.openURL('mailto:service@telecom-service.co.uk?subject=Get_in_touch') }
-        style={styles.button}>
+          style={styles.button}
+          onPress={() => handlePress()}>
           <View>
-              <Text style={{fontSize: 20, color: '#ffffff'}}>
+            <Text style={{fontSize: 20, color: '#ffffff'}}>
               Get in touch!
-              </Text>
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
