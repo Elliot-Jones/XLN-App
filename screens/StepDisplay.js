@@ -97,8 +97,9 @@ function DisplayStep(array, i,j){
       return (
         <View style={styles.container}>
             <Text style = {styles.body}>{step}</Text>
-            <Button title='Next' onPress = {() => {j++; setStep(DisplayStep(faultData,selection,j, false));}}/>
-            <Button title = 'Back' onPress = {() => {j--; setStep(DisplayStep(faultData,selection,j, false));}}/>
+            <Button title='Next' onPress = {() => {j++; setStep(DisplayStep(faultData,selection,j));}}/>
+            <Button title = 'Back' onPress = {() => {j--; setStep(DisplayStep(faultData,selection,j));}}/>
+            <Button title = 'Go to start' onPress = {() => {j=0; setStep(DisplayStep(faultData,selection, j))}} />
         </View>
       );
     }
