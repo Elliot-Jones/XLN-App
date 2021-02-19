@@ -35,8 +35,18 @@ export const styles = StyleSheet.create({
     },
     row: {
       padding: 4,
-      borderBottomColor: "#ffffff",
+      borderBottomColor: '#3e3d40',
       borderBottomWidth: StyleSheet.hairlineWidth
+    },
+    button: {
+      paddingVertical: 12,
+      paddingHorizontal: 25,
+      borderRadius: 25,
+      backgroundColor: '#00a3c4'
+    },
+    space: {
+      width: 20,
+      height: 20
     }
 });
 
