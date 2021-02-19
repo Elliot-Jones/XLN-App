@@ -61,7 +61,7 @@ export function HomeScreen({navigation}){
       else if (compareData(customData, value.refNum))
         ServiceSelector();
       else
-        navigation.navigate('Step Selector' , {selection: "Landline"});
+        navigation.navigate('Step Selector' , {selection: "Broadband"});
     else
     console.log('Error');
   }
