@@ -39,7 +39,7 @@
             ["Has there been any electrical issues or storms? if yes alternative router is needed",2], ["What is your current speed?",1]]
     },
     {
-        "Name": "intermittent connection",
+        "Name": "Intermittent Connection",
         "Steps": [["Is the telephone line working?",2], ["Are you able to receive and make calls? or is it just outgoing",2], ["If you are able to make calls please call 17070",2], 
             ["If number is different than expected, switch to landline fault scenario",2], ["Describe your set up from NTE",1], ["is the broadband light on/flashing/off?",1],
             "Are you able to replace the Micro Filter or DSL cable? if you can't use phone wire direct to router without filter, to rule out these two options",

@@ -25,7 +25,7 @@ export function Step_Selector ({ route, navigation }) {
   }
     return (
       <View style={styles.container}>
-          <Image source={logo} style={styles.logo}/>
+          <Image source={logo} style={{maxHeight:159, maxWidth:400, position: 'absolute', top: 25, marginBottom:20} }/>
           <Text style ={styles.header}>{selection}</Text>
           {ListAll(faultData, navigation)}
       </View>
