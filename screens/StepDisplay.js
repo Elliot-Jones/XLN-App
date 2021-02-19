@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import {StyleSheets, Text, View, Button, TouchableOpacity, Alert , TextInput} from 'react-native';
-import logo from '../assets/logo2.png';
+import {StyleSheets, Image, Text, View, Button, TouchableOpacity, Alert , TextInput} from 'react-native';
+import logo from '../assets/logo.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
 import { get } from 'react-hook-form';
@@ -56,25 +56,25 @@ function DisplayStep(array, i,j){
           <View>
           <Text>{array[i].Steps[j][0]}</Text>
           <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-    />
+            style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          />
           </View>
         )
         case 2:
           return(
             <View>
             <Text>{array[i].Steps[j][0]}</Text>
-            <TouchableOpacity style = {styles.button} onPress= {YesS()}>
+            <TouchableOpacity style = {styles.button} onPress= {this.YesS}>
               <View>
-                <Text style={{fontSize: 20, textAlign: 'center', fontWeight:'bold', color: '#ffffff'}}>
+                <Text style={styles.buttonText}>
                   Yes
                 </Text>
               </View>
             </TouchableOpacity>
             <View style={styles.space}/>
-            <TouchableOpacity style = {styles.button} onPress= {NoS()}>
+            <TouchableOpacity style = {styles.button} onPress= {this.NoS}>
               <View>
-                <Text style={{fontSize: 20, textAlign: 'center', fontWeight:'bold', color: '#ffffff'}}>
+                <Text style={styles.buttonText}>
                   No
                 </Text>
               </View>
@@ -103,10 +103,11 @@ function DisplayStep(array, i,j){
     }
       return (
         <View style={styles.container}>
+          <Image source={logo} style={{flex:1, maxHeight:159, maxWidth:400, marginTop:20, marginBottom:35}}/>
             <Text style = {styles.body}>{step}</Text>
             <TouchableOpacity style = {styles.button} onPress = {() => {j++; setStep(DisplayStep(faultData,selection,j, false));}}>
               <View>
-                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                <Text style={styles.buttonText}>
                   Next
                 </Text>
               </View>
@@ -114,7 +115,7 @@ function DisplayStep(array, i,j){
             <View style={styles.space}/>
             <TouchableOpacity style = {styles.button} onPress = {() => {j--; setStep(DisplayStep(faultData,selection,j, false));}}>
               <View>
-                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                <Text style={styles.buttonText}>
                   Back
                 </Text>
               </View>
@@ -122,7 +123,7 @@ function DisplayStep(array, i,j){
             <View style={styles.space}/>
             <TouchableOpacity style = {styles.button} onPress = {() => {j=0; setStep(DisplayStep(faultData,selection, j))}}>
               <View>
-                <Text style={{fontSize: 20, color: '#ffffff'}}>
+                <Text style={styles.buttonText}>
                   Go to start
                 </Text>
               </View>

@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
       textAlign: "center",
       fontSize: 30,
       fontWeight: 'bold',
+      margin:20,
       color: "#3e3d40"
     },
     logo: {
@@ -43,6 +44,18 @@ export const styles = StyleSheet.create({
       paddingHorizontal: 25,
       borderRadius: 25,
       backgroundColor: '#00a3c4'
+    },
+    selectionButton: {
+      paddingVertical: 12,
+      paddingHorizontal: 25,
+      borderRadius: 25,
+      margin: 10,
+      backgroundColor: '#00a3c4'
+    },
+    buttonText:{
+      fontSize: 20, 
+      color: '#ffffff',
+      textAlign:"center"
     },
     space: {
       width: 20,
