@@ -2,12 +2,13 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import  StepSelector  from './screens/Stepselector.js';
-import  HomeScreen  from './screens/Homescreen.js';
+import StepSelector  from './screens/Stepselector.js';
+import HomeScreen  from './screens/Homescreen.js';
 import InfoScreen from './screens/InfoScreen.js';
-import  StepDisplay  from './screens/StepDisplay.js';
+import StepDisplay  from './screens/StepDisplay.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Email from './screens/Email.js';
+import Camera from "./screens/Camera.js";
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
@@ -45,6 +46,7 @@ export default function App() {
           <Stack.Screen name="Step Selector" component={StepSelector} />
           <Stack.Screen name="Step Display" component={StepDisplay} />
           <Stack.Screen name="Email" component={Email} />
+          <Stack.Screen name="Camera" component={Camera} />
         </Stack.Navigator>
     </NavigationContainer>
   )

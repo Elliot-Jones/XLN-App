@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
 import * as MailComposer from 'expo-mail-composer';    //Mail
+import {App} from "./Camera.js";
 
 const Form = t.form.Form
 export function Email({route, navigation}){
@@ -27,15 +28,23 @@ export function Email({route, navigation}){
     return (
       <View style={styles.container}>
         <Text style={styles.body}>Thank you for using our troubleshooter </Text>
-        <Text style={styles.body}>Please click the link below to email our team</Text>
+        <Text style={styles.body}>Please click link to take an image of your issue, return to this screen, then click the email link and attach the image to your email</Text>
         <Image source={logo} style={styles.logo}/>
-        <TouchableOpacity style={styles.button}  onPress={()=>this.handlePress()}>
-        <View>
-              <Text style={styles.buttonText}>
-              Email Us
-              </Text>
+
+        <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Camera')}>
+          <View>
+            <Text style={styles.buttonText}>
+              Take picture
+            </Text>
           </View>
-          
+        </TouchableOpacity>
+        <View style={styles.space}/>
+        <TouchableOpacity style={styles.button}  onPress={()=>this.handlePress()}>
+          <View>
+            <Text style={styles.buttonText}>
+              Email Us
+            </Text>
+          </View>
         </TouchableOpacity>        
         <StatusBar style="auto" />
       </View>
