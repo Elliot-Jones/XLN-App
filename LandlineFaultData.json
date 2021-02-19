@@ -1,6 +1,6 @@
 [
     {
-        "Name": "Inital Troubleshooting steps",
+        "Name": "Initial Troubleshooting steps",
         "Steps": [ ["Are you able to Make any calls?", 2],["If you are able to make calls try contacting us on 17070",2],
             ["Is your connection intermittent and preventing you from calling us?",2],["Have you tried using the test socket?",2],
             ["Has the micro filter been changed?",2], ["Have you tried an alteranative handset?",2],["What is your contact number?",1]
