@@ -5,7 +5,7 @@ import logo from '../assets/logo2.png';
 import t from 'tcomb-form-native';
 import {styles} from '../styles/styles.js';
 import * as MailComposer from 'expo-mail-composer';    //Mail
-
+import {App} from "./camera.js";
 const Form = t.form.Form
 export function Email({route, navigation}){
   
@@ -27,7 +27,8 @@ export function Email({route, navigation}){
                   subject: 'XLN Troubleshooting',
                   body: EmailBody,
                 });
-    }
+    } 
+    
 
     return (
       <View style={styles.container}>
@@ -38,7 +39,10 @@ export function Email({route, navigation}){
             title="Email Us"
             onPress={()=>this.handlePress()}
           />
-          
+           <Button
+            title=" take picture"
+            onPress={() => navigation.navigate('camera')} 
+          />
         <StatusBar style="auto" />
       </View>
     );
