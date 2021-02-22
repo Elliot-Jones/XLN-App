@@ -33,7 +33,7 @@ export function Email({route, navigation}){
 
         <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Camera')}>
           <View>
-            <Text style={styles.buttonText}>// the reason it dint work on your phone " frogot to include the on press function " 
+            <Text style={styles.buttonText}>
              
               Take picture
             </Text>
